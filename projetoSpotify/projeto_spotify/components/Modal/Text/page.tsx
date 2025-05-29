@@ -1,16 +1,20 @@
-
+// Objective: Define the modal text component
 type textProps = {
-    title: string;
-    body: string
-}
+  title: string;
+  body: string;
+  className?: string;
+};
 
 export default function Text(props: textProps) {
-
-    return (
-        <section>
-            <img src="logo_vhs_preto.png" className='m-1 w-20' />
-            <h1 className='m-2 w-auto'>{props.title}</h1>
-            <p className='my-2 w-auto'>{props.body}</p>
-        </section>
-    );
+  const {
+    title = "Bem-vindo ao VHS",
+    body = "Compartilhe sua playlist com a gente!",
+    className = "",
+  } = props;
+  return (
+    <section className={className}>
+      <h1 className="m-2 w-auto">{title}</h1>
+      <p className="my-2 w-auto">{body}</p>
+    </section>
+  );
 }

@@ -20,23 +20,8 @@ const getAccessToken = async () => {
   return response.json();
 };
 
-// export const getTopUserTracks = async () => {
-//   const { access_token } = await getAccessToken();
-//   const response = await fetch(GET_TOP_TRACKS, {
-//     headers: {
-//       Authorization: `Bearer ${access_token}`,
-//     },
-//   });
-
-//   const finalResult = await response.json();
-//   console.log("Original data:", finalResult); // Log original data
-//   const data = Buffer.from(JSON.stringify(finalResult)).toString("base64");
-//   console.log("Serialized data:", data); // Log serialized data
-//   return data;
-// };
-
 export async function getTopUserTracks(accessToken: string) {
-  const res = await fetch("https://api.spotify.com/v1/me/top/tracks", {
+  const res = await fetch( GET_TOP_TRACKS , {
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },

@@ -9,7 +9,7 @@ export const authOptions = {
       authorization: "https://accounts.spotify.com/authorize?scope=user-read-email,user-read-private,user-top-read",
     }),
   ],
-  secret: process.env.NEXTAUTH_SECRET, // ⚠️ IMPORTANTE!
+  secret: process.env.NEXTAUTH_SECRET,
   pages: {
     signIn: "/",
   },
